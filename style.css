@@ -1,0 +1,732 @@
+/* ========================================
+   IKURU GROUP — STYLE
+======================================== */
+
+
+/* ========================================
+   VARIÁVEIS
+======================================== */
+
+:root {
+    --blue: #1E5AA8;
+    --blue-light: #93C5FD;
+    --blue-soft: #E6EEF7;
+    --background: #F4F7FA;
+    --white: #FFFFFF;
+    --text: #172B4D;
+    --text-light: #60708A;
+    --border: #DCE6F2;
+    --shadow: 0 15px 40px rgba(30, 90, 168, 0.10);
+}
+
+
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid transparent;
+    transition: 0.3s ease;
+}
+
+
+header.scrolled {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom-color: var(--border);
+    box-shadow: 0 5px 25px rgba(30, 90, 168, 0.08);
+}
+
+
+.nav {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+
+.logo img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    transition: 0.3s ease;
+}
+
+
+nav a:hover {
+    color: var(--blue);
+}
+
+
+#menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--blue);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 140px 0 90px;
+    background:
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(147, 197, 253, 0.30),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            var(--white),
+            var(--blue-soft)
+        );
+}
+
+
+.hero .container {
+    max-width: 900px;
+}
+
+
+.tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.hero h1 {
+    max-width: 850px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span,
+h2 span {
+    color: var(--blue);
+}
+
+
+.hero p {
+    max-width: 680px;
+    color: var(--text-light);
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   BOTÕES
+======================================== */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+}
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 50px;
+    padding: 0 25px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.primary {
+    background: var(--blue);
+    color: var(--white);
+    box-shadow: 0 8px 20px rgba(30, 90, 168, 0.20);
+}
+
+
+.primary:hover {
+    background: #174D91;
+}
+
+
+.secondary {
+    background: var(--white);
+    color: var(--blue);
+    border: 1px solid var(--border);
+}
+
+
+.secondary:hover {
+    border-color: var(--blue-light);
+    background: var(--blue-soft);
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
+
+.section {
+    padding: 100px 0;
+}
+
+
+.section.light {
+    background: var(--blue-soft);
+}
+
+
+.section h2,
+.contact h2 {
+    max-width: 850px;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 22px;
+}
+
+
+.intro {
+    max-width: 760px;
+    color: var(--text-light);
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+
+.cards article {
+    background: var(--white);
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: 0.3s ease;
+}
+
+
+.cards article:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue-light);
+}
+
+
+.cards strong {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--blue);
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+.cards h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+
+.cards p {
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+
+/* ========================================
+   SOLUÇÕES
+======================================== */
+
+#solucoes .cards {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+#solucoes .cards article {
+    min-height: 190px;
+}
+
+
+#solucoes .cards h3 {
+    color: var(--blue);
+}
+
+
+/* ========================================
+   PROCESSO
+======================================== */
+
+#processo .cards {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+#processo .cards article {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    padding: 15px;
+}
+
+
+#processo .cards article:hover {
+    transform: none;
+}
+
+
+#processo .cards strong {
+    font-size: 28px;
+}
+
+
+/* ========================================
+   INSIGHTS
+======================================== */
+
+#insights .cards {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
+#insights .cards article {
+    min-height: 230px;
+}
+
+
+#insights small {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+#insights h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+
+#insights a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+
+#insights a:hover {
+    color: #174D91;
+}
+
+
+/* ========================================
+   CONTACTO
+======================================== */
+
+.contact {
+    padding: 100px 0;
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            #174D91
+        );
+    color: var(--white);
+}
+
+
+.contact .tag {
+    color: var(--blue-light);
+}
+
+
+.contact h2 {
+    color: var(--white);
+}
+
+
+.contact h2 span {
+    color: var(--blue-light);
+}
+
+
+.contact p {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.80);
+}
+
+
+.whatsapp {
+    background: var(--white);
+    color: var(--blue);
+}
+
+
+.whatsapp:hover {
+    background: var(--blue-soft);
+}
+
+
+.phone {
+    color: var(--white);
+    font-weight: 700;
+    padding: 12px 5px;
+}
+
+
+.phone:hover {
+    color: var(--blue-light);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    background: #102A4A;
+    color: var(--white);
+    padding-top: 65px;
+}
+
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 18px;
+    background: var(--white);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+
+.footer-content p {
+    max-width: 350px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 14px;
+}
+
+
+.footer-content h4 {
+    margin-bottom: 15px;
+    color: var(--blue-light);
+}
+
+
+.footer-content a {
+    display: block;
+    margin-bottom: 9px;
+    color: rgba(255, 255, 255, 0.70);
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+
+.footer-content a:hover {
+    color: var(--white);
+}
+
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    padding: 20px 5%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 13px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .cards,
+    #solucoes .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #processo .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1.5fr 1fr 1fr;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .container {
+        width: 90%;
+    }
+
+
+    /* HEADER */
+
+    .nav {
+        min-height: 70px;
+    }
+
+
+    .logo img {
+        width: 125px;
+    }
+
+
+    #menu-btn {
+        display: block;
+    }
+
+
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+
+    nav.active {
+        display: flex;
+    }
+
+
+    nav a {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 15px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding: 130px 0 80px;
+    }
+
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.5px;
+    }
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+    .buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /* SEÇÕES */
+
+    .section,
+    .contact {
+        padding: 75px 0;
+    }
+
+
+    .section h2,
+    .contact h2 {
+        font-size: 34px;
+    }
+
+
+    /* CARDS */
+
+    .cards,
+    #solucoes .cards,
+    #processo .cards,
+    #insights .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .cards article {
+        padding: 25px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE PEQUENO
+======================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+
+    .section h2,
+    .contact h2 {
+        font-size: 30px;
+    }
+
+
+    .logo img {
+        width: 115px;
+    }
+
+}
