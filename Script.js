@@ -1,0 +1,1865 @@
+/* =========================================================
+   IKURU GROUP
+   STYLE.CSS
+   Paleta:
+   #F4F7FA — Fundo
+   #E6EEF7 — Azul muito claro
+   #1E5AA8 — Azul royal
+   #2563EB — Azul de destaque
+   #93C5FD — Azul claro
+   ========================================================= */
+
+
+/* =========================================================
+   01. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #F4F7FA;
+    color: #102A43;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   02. VARIÁVEIS
+   ========================================================= */
+
+:root {
+
+    --blue-dark: #174A89;
+    --blue: #1E5AA8;
+    --blue-bright: #2563EB;
+    --blue-light: #93C5FD;
+
+    --blue-soft: #E6EEF7;
+    --blue-pale: #F4F7FA;
+
+    --white: #FFFFFF;
+
+    --text: #102A43;
+    --text-soft: #486581;
+    --text-light: #627D98;
+
+    --border: rgba(30, 90, 168, 0.14);
+
+    --shadow-sm:
+        0 4px 20px rgba(30, 90, 168, 0.06);
+
+    --shadow:
+        0 15px 45px rgba(30, 90, 168, 0.10);
+
+    --shadow-lg:
+        0 25px 70px rgba(30, 90, 168, 0.14);
+
+    --radius-sm: 10px;
+    --radius: 18px;
+    --radius-lg: 28px;
+
+    --container: 1180px;
+
+    --transition:
+        all 0.3s ease;
+}
+
+
+/* =========================================================
+   03. CONTAINER
+   ========================================================= */
+
+.container {
+    width: min(
+        calc(100% - 40px),
+        var(--container)
+    );
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   04. HEADER
+   ========================================================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background:
+        rgba(244, 247, 250, 0.88);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(30, 90, 168, 0.08);
+
+    transition: var(--transition);
+}
+
+.header-container {
+    height: 82px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    width: 145px;
+    height: auto;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+   ========================================================= */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-link {
+    position: relative;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--blue);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--blue-bright);
+
+    transition: var(--transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   HEADER CTA
+   ========================================================= */
+
+.header-cta {
+    padding: 11px 20px;
+
+    background: var(--blue);
+
+    color: var(--white);
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 7px 20px rgba(30, 90, 168, 0.18);
+}
+
+.header-cta:hover {
+    background: var(--blue-bright);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   MENU MOBILE
+   ========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 20px;
+    height: 2px;
+
+    background: var(--blue);
+
+    border-radius: 5px;
+
+    transition: var(--transition);
+}
+
+
+/* =========================================================
+   05. HERO
+   ========================================================= */
+
+.hero-section {
+    min-height: 100vh;
+
+    padding-top: 82px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF 0%,
+            #F4F7FA 50%,
+            #E6EEF7 100%
+        );
+}
+
+
+/* brilho azul */
+
+.hero-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -180px;
+    top: 80px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(147, 197, 253, 0.30),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.hero-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -160px;
+    bottom: -120px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(37, 99, 235, 0.08),
+            transparent 70%
+        );
+
+    pointer-events: none;
+}
+
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr
+        0.9fr;
+
+    align-items: center;
+
+    gap: 80px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.hero-content {
+    max-width: 680px;
+}
+
+
+.eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 2px;
+
+    background: var(--blue-light);
+}
+
+
+.hero-content h1 {
+    font-family: "Manrope", sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            78px
+        );
+
+    line-height: 1.04;
+
+    letter-spacing: -0.045em;
+
+    color: var(--text);
+
+    margin-bottom: 28px;
+}
+
+
+.hero-content h1 span {
+    display: block;
+
+    color: var(--blue);
+}
+
+
+.hero-description {
+    max-width: 610px;
+
+    color: var(--text-soft);
+
+    font-size: 18px;
+
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   BOTÕES
+   ========================================================= */
+
+.hero-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 50px;
+
+    padding:
+        0 23px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: var(--transition);
+}
+
+
+.button-primary {
+    background: var(--blue);
+
+    color: var(--white);
+
+    box-shadow:
+        0 10px 25px rgba(30, 90, 168, 0.18);
+}
+
+
+.button-primary:hover {
+    background: var(--blue-bright);
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.24);
+}
+
+
+.button-secondary {
+    background: rgba(255, 255, 255, 0.7);
+
+    color: var(--blue);
+
+    border:
+        1px solid var(--border);
+}
+
+
+.button-secondary:hover {
+    background: var(--white);
+
+    border-color:
+        rgba(30, 90, 168, 0.25);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+.hero-visual::before,
+.hero-visual::after {
+    content: "";
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(30, 90, 168, 0.12);
+}
+
+
+.hero-visual::before {
+    width: 400px;
+    height: 400px;
+}
+
+
+.hero-visual::after {
+    width: 300px;
+    height: 300px;
+
+    border-color:
+        rgba(147, 197, 253, 0.45);
+}
+
+
+.hero-center {
+    width: 210px;
+    height: 210px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #E6EEF7
+        );
+
+    border:
+        1px solid rgba(30, 90, 168, 0.16);
+
+    box-shadow:
+        0 25px 70px rgba(30, 90, 168, 0.16);
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.hero-center::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed rgba(37, 99, 235, 0.25);
+}
+
+
+.hero-center strong {
+    font-family: "Manrope", sans-serif;
+
+    color: var(--blue);
+
+    font-size: 29px;
+
+    letter-spacing: -0.03em;
+}
+
+
+.hero-center span {
+    color: var(--text-light);
+
+    font-size: 10px;
+
+    letter-spacing: 0.35em;
+
+    margin-left: 5px;
+}
+
+
+/* =========================================================
+   06. SEÇÕES
+   ========================================================= */
+
+.section {
+    padding:
+        120px 0;
+
+    position: relative;
+}
+
+
+.section-heading {
+    max-width: 760px;
+
+    margin-bottom: 60px;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 16px;
+
+    color: var(--blue);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+}
+
+
+.section-heading h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size:
+        clamp(
+            34px,
+            4vw,
+            52px
+        );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.035em;
+
+    color: var(--text);
+
+    margin-bottom: 20px;
+}
+
+
+.section-heading h2 span {
+    color: var(--blue);
+}
+
+
+.section-heading p {
+    max-width: 680px;
+
+    color: var(--text-soft);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   07. SOBRE
+   ========================================================= */
+
+.about-section {
+    background:
+        linear-gradient(
+            180deg,
+            #F4F7FA,
+            #FFFFFF
+        );
+}
+
+
+.about-content {
+    max-width: 850px;
+
+    display: grid;
+
+    gap: 18px;
+
+    margin-bottom: 55px;
+}
+
+
+.about-content p {
+    color: var(--text-soft);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.about-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.principle-card {
+    padding: 32px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+
+.principle-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: var(--shadow);
+
+    border-color:
+        rgba(30, 90, 168, 0.25);
+}
+
+
+.principle-card > span {
+    color: var(--blue);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.principle-card h3 {
+    font-family: "Manrope", sans-serif;
+
+    color: var(--text);
+
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    margin:
+        16px 0;
+}
+
+
+.principle-card p {
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   VALORES
+   ========================================================= */
+
+.values {
+    margin-top: 70px;
+
+    padding-top: 40px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.values h3 {
+    font-family: "Manrope", sans-serif;
+
+    color: var(--text);
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+.value-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.value-list span {
+    padding:
+        9px 16px;
+
+    background: var(--blue-soft);
+
+    color: var(--blue);
+
+    border-radius: 50px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   08. SOLUÇÕES
+   ========================================================= */
+
+.solutions-section {
+    background: #FFFFFF;
+}
+
+
+.solutions-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+
+.solution-card {
+    padding: 35px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F4F7FA
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    min-height: 390px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: var(--transition);
+}
+
+
+.solution-card:hover {
+    transform: translateY(-8px);
+
+    border-color:
+        rgba(30, 90, 168, 0.25);
+
+    box-shadow: var(--shadow);
+}
+
+
+.solution-number {
+    color: var(--blue-light);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    line-height: 1;
+}
+
+
+.solution-card h3 {
+    font-family: "Manrope", sans-serif;
+
+    color: var(--blue);
+
+    font-size: 25px;
+
+    margin:
+        25px 0 15px;
+}
+
+
+.solution-card p {
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 22px;
+}
+
+
+.solution-card ul {
+    list-style: none;
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: auto;
+}
+
+
+.solution-card li {
+    position: relative;
+
+    padding-left: 20px;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+
+.solution-card li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 9px;
+
+    width: 7px;
+    height: 7px;
+
+    background: var(--blue-light);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   09. GRUPO
+   ========================================================= */
+
+.group-section {
+    background:
+        linear-gradient(
+            135deg,
+            #F4F7FA,
+            #E6EEF7
+        );
+}
+
+
+.group-main {
+    padding: 45px;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue-dark),
+            var(--blue)
+        );
+
+    color: var(--white);
+
+    border-radius: var(--radius-lg);
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 55px rgba(30, 90, 168, 0.18);
+}
+
+
+.group-main > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--blue-light);
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.group-main h3 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 36px;
+
+    letter-spacing: -0.03em;
+
+    margin-bottom: 10px;
+}
+
+
+.group-main p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    color: #DCEBFA;
+
+    font-size: 14px;
+}
+
+
+.group-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.group-unit {
+    padding: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    transition: var(--transition);
+}
+
+
+.group-unit:hover {
+    background: var(--white);
+
+    transform: translateY(-5px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.group-unit > span {
+    color: var(--blue-light);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 800;
+}
+
+
+.group-unit h3 {
+    color: var(--blue);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 19px;
+
+    margin:
+        15px 0 10px;
+}
+
+
+.group-unit p {
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   10. PROCESSO
+   ========================================================= */
+
+.process-section {
+    background: #FFFFFF;
+}
+
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.process-step {
+    position: relative;
+
+    padding: 30px;
+
+    border-top:
+        2px solid var(--blue-light);
+}
+
+
+.process-step > span {
+    color: var(--blue);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 800;
+}
+
+
+.process-step h3 {
+    font-family: "Manrope", sans-serif;
+
+    color: var(--text);
+
+    font-size: 21px;
+
+    margin:
+        15px 0 10px;
+}
+
+
+.process-step p {
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   11. DIFERENCIAL
+   ========================================================= */
+
+.difference-section {
+    background:
+        linear-gradient(
+            135deg,
+            #E6EEF7,
+            #F4F7FA
+        );
+}
+
+
+.difference-content {
+    max-width: 800px;
+
+    display: grid;
+
+    gap: 18px;
+}
+
+
+.difference-content p {
+    color: var(--text-soft);
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.difference-content p:first-child {
+    color: var(--blue);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.35;
+}
+
+
+/* =========================================================
+   12. INSIGHTS
+   ========================================================= */
+
+.insights-section {
+    background: #FFFFFF;
+}
+
+
+.insights-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.insight-card {
+    position: relative;
+
+    padding: 40px;
+
+    min-height: 300px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F4F7FA
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    overflow: hidden;
+
+    transition: var(--transition);
+}
+
+
+.insight-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -70px;
+    bottom: -70px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(147, 197, 253, 0.30),
+            transparent 70%
+        );
+
+    border-radius: 50%;
+}
+
+
+.insight-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: var(--shadow);
+
+    border-color:
+        rgba(30, 90, 168, 0.25);
+}
+
+
+.insight-category {
+    display: inline-block;
+
+    padding:
+        7px 12px;
+
+    background: var(--blue-soft);
+
+    color: var(--blue);
+
+    border-radius: 50px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+
+    margin-bottom: 22px;
+}
+
+
+.insight-card h3 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 450px;
+
+    font-family: "Manrope", sans-serif;
+
+    color: var(--text);
+
+    font-size: 27px;
+
+    line-height: 1.25;
+
+    margin-bottom: 15px;
+}
+
+
+.insight-card p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 500px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+.insight-status {
+    position: relative;
+    z-index: 1;
+
+    color: var(--blue-light);
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   13. FAQ
+   ========================================================= */
+
+.faq-section {
+    background:
+        linear-gradient(
+            180deg,
+            #F4F7FA,
+            #FFFFFF
+        );
+}
+
+
+.faq-list {
+    max-width: 850px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+.faq-item {
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.faq-item summary {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 23px 0;
+
+    color: var(--text);
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    list-style: none;
+}
+
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+
+.faq-item summary span {
+    color: var(--blue);
+
+    font-size: 24px;
+
+    font-weight: 400;
+
+    transition: var(--transition);
+}
+
+
+.faq-item[open] summary span {
+    transform: rotate(45deg);
+}
+
+
+.faq-item p {
+    max-width: 750px;
+
+    padding:
+        0 45px 25px 0;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    lin
+/* =========================================================
+   IKURU GROUP
+   SCRIPT.JS
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =====================================================
+       01. MENU MOBILE
+       ===================================================== */
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".main-navigation");
+
+    if (menuToggle && navigation) {
+
+        menuToggle.addEventListener("click", () => {
+
+            const isOpen =
+                navigation.classList.toggle("open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
+
+        });
+
+
+        /* Fechar menu ao clicar num link */
+
+        const navLinks =
+            document.querySelectorAll(".nav-link");
+
+        navLinks.forEach((link) => {
+
+            link.addEventListener("click", () => {
+
+                navigation.classList.remove("open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       02. ANO AUTOMÁTICO DO FOOTER
+       ===================================================== */
+
+    const currentYear =
+        document.querySelector("[data-current-year]");
+
+    if (currentYear) {
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+    }
+
+
+
+    /* =====================================================
+       03. HEADER AO FAZER SCROLL
+       ===================================================== */
+
+    const header =
+        document.querySelector(".site-header");
+
+    if (header) {
+
+        const updateHeader = () => {
+
+            if (window.scrollY > 30) {
+
+                header.style.boxShadow =
+                    "0 8px 30px rgba(30, 90, 168, 0.08)";
+
+            } else {
+
+                header.style.boxShadow = "none";
+
+            }
+
+        };
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive: true }
+        );
+
+
+        updateHeader();
+
+    }
+
+
+
+    /* =====================================================
+       04. NAVEGAÇÃO ATIVA
+       ===================================================== */
+
+    const sections =
+        document.querySelectorAll("main section[id]");
+
+    const navigationLinks =
+        document.querySelectorAll(".nav-link");
+
+
+    const updateActiveNavigation = () => {
+
+        let currentSection = "";
+
+
+        sections.forEach((section) => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+            const sectionBottom =
+                sectionTop + section.offsetHeight;
+
+
+            if (
+                window.scrollY >= sectionTop &&
+                window.scrollY < sectionBottom
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navigationLinks.forEach((link) => {
+
+            link.classList.remove("active");
+
+
+            const target =
+                link.getAttribute("href");
+
+
+            if (
+                target === `#${currentSection}`
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    };
+
+
+    window.addEventListener(
+        "scroll",
+        updateActiveNavigation,
+        { passive: true }
+    );
+
+
+    updateActiveNavigation();
+
+
+
+    /* =====================================================
+       05. ANIMAÇÃO DAS SEÇÕES
+       ===================================================== */
+
+    const animatedElements =
+        document.querySelectorAll(
+            ".section-heading, " +
+            ".principle-card, " +
+            ".solution-card, " +
+            ".group-unit, " +
+            ".process-step, " +
+            ".insight-card, " +
+            ".faq-item"
+        );
+
+
+    if ("IntersectionObserver" in window) {
+
+        const observer =
+            new IntersectionObserver(
+                (entries, observerInstance) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observerInstance.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+
+        animatedElements.forEach((element) => {
+
+            element.classList.add(
+                "scroll-animation"
+            );
+
+            observer.observe(element);
+
+        });
+
+    }
+
+
+
+    /* =====================================================
+       06. FORMULÁRIO
+       ===================================================== */
+
+    const contactForm =
+        document.querySelector(".contact-form");
+
+    const successMessage =
+        document.querySelector(".form-success");
+
+
+    if (contactForm && successMessage) {
+
+        contactForm.addEventListener(
+            "submit",
+            (event) => {
+
+                event.preventDefault();
+
+
+                const nameInput =
+                    document.querySelector("#nome");
+
+                const name =
+                    nameInput
+                        ? nameInput.value.trim()
+                        : "";
+
+
+                successMessage.textContent =
+                    name
+                        ? `Obrigado, ${name}. Recebemos a sua mensagem.`
+                        : "Obrigado. Recebemos a sua mensagem.";
+
+
+                successMessage.hidden = false;
+
+
+                successMessage.style.display =
+                    "block";
+
+
+                successMessage.style.marginTop =
+                    "15px";
+
+
+                successMessage.style.padding =
+                    "12px 15px";
+
+
+                successMessage.style.borderRadius =
+                    "9px";
+
+
+                successMessage.style.background =
+                    "#E6EEF7";
+
+
+                successMessage.style.color =
+                    "#1E5AA8";
+
+
+                contactForm.reset();
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       07. LINKS INTERNOS
+       ===================================================== */
+
+    const internalLinks =
+        document.querySelectorAll(
+            'a[href^="#"]'
+        );
+
+
+    internalLinks.forEach((link) => {
+
+        link.addEventListener(
+            "click",
+            (event) => {
+
+                const targetId =
+                    link.getAttribute("href");
+
+
+                if (
+                    !targetId ||
+                    targetId === "#"
+                ) {
+
+                    return;
+
+                }
+
+
+                const target =
+                    document.querySelector(
+                        targetId
+                    );
+
+
+                if (!target) {
+
+                    return;
+
+                }
+
+
+                event.preventDefault();
+
+
+                const headerHeight =
+                    header
+                        ? header.offsetHeight
+                        : 0;
+
+
+                const targetPosition =
+                    target.getBoundingClientRect().top +
+                    window.scrollY -
+                    headerHeight;
+
+
+                window.scrollTo({
+
+                    top: targetPosition,
+
+                    behavior: "smooth"
+
+                });
+
+            }
+        );
+
+    }
+
+
+
+    /* =====================================================
+       08. ACESSIBILIDADE
+       ===================================================== */
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (
+                event.key === "Escape" &&
+                navigation
+            ) {
+
+                navigation.classList.remove(
+                    "open"
+                );
+
+
+                if (menuToggle) {
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
+
+});
